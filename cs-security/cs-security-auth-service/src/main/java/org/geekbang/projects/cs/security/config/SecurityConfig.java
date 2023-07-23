@@ -13,6 +13,9 @@ import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    /**
+     * 自定义认证逻辑
+     */
     @Autowired
     private AuthenticationProviderService authenticationProvider;
 

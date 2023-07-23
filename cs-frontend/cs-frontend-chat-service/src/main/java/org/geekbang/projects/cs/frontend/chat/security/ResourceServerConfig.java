@@ -9,6 +9,9 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 
 import javax.annotation.Resource;
 
+/**
+ * 资源服务器配置
+ */
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {

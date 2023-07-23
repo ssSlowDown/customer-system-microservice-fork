@@ -21,6 +21,8 @@ public class CustomerStaffIntegrationClient {
 
         OutsourcingSystemDTO outsourcingSystemDTO = CustomerStaffIntegrationConverter.INSTANCE.convertOutsourcingSystem(outsourcingSystem);
 
+        // 此处使用 feign client 调用
+        // rest -> dubbo -> feign
         List<PlatformCustomerStaff> platformCustomerStaffs = customerStaffIntegrationServiceApi.fetchCustomerStaffs(outsourcingSystemDTO);
 
         return CustomerStaffIntegrationConverter.INSTANCE.convertCustomerStaffListDTO(platformCustomerStaffs);

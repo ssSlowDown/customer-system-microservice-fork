@@ -12,6 +12,7 @@ public class JWTTokenEnhancer implements TokenEnhancer {
 
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
+        // 扩展 accessToken，添加了属性
         Map<String, Object> systemInfo = new HashMap<>();
         systemInfo.put("system", "Customer System");
 

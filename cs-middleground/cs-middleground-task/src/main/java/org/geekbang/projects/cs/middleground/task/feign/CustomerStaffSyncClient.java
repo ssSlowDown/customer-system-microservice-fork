@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import static org.geekbang.projects.cs.middleground.task.feign.ApiConstants.PREFIX;
 import static org.geekbang.projects.cs.middleground.task.feign.ApiConstants.SERVICE_NAME;
 
+/**
+ * 客户端中定义client， 与被调用端对应
+ * CustomerStaffController
+ */
 @FeignClient(value = SERVICE_NAME, path = PREFIX + "/sync", fallbackFactory = CustomerStaffSyncClientFallback.class,
         configuration = FeignConfiguration.class)
 public interface CustomerStaffSyncClient {

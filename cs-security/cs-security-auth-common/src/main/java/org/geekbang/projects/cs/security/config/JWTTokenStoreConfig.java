@@ -8,6 +8,9 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+/**
+ * 集成OAuth2与JWT
+ */
 @Configuration
 public class JWTTokenStoreConfig {
 
@@ -18,6 +21,9 @@ public class JWTTokenStoreConfig {
 		return new JwtTokenStore(jwtAccessTokenConverter());
 	}
 
+	/**
+	 * 存储token
+	 */
 	@Bean
 	@Primary
 	public DefaultTokenServices tokenServices() {
@@ -27,7 +33,9 @@ public class JWTTokenStoreConfig {
 		return defaultTokenServices;
 	}
 
-
+	/**
+	 * jwt 转换器
+	 */
 	@Bean
 	public JwtAccessTokenConverter jwtAccessTokenConverter() {
 		JwtAccessTokenConverter converter = new JwtAccessTokenConverter();

@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+/**
+ * 同步客服人员信息调度任务处理器
+ */
 @Component
 public class CustomerStaffSyncJobHandler {
 

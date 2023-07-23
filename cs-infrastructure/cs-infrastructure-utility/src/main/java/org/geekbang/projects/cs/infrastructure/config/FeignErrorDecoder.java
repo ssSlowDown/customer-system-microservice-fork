@@ -11,6 +11,7 @@ public class FeignErrorDecoder extends ErrorDecoder.Default {
     @Override
     public Exception decode(String methodKey, Response response) {
         Exception exception = super.decode(methodKey, response);
+        // 可以对异常信息进行定制化处理
         logger.error(exception.getMessage(), exception);
         return exception;
     }

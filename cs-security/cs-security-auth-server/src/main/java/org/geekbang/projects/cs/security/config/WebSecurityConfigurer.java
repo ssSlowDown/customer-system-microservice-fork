@@ -7,6 +7,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+/**
+ * Security 配置
+ */
 @Configuration
 public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 

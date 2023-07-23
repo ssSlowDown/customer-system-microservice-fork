@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import java.util.Arrays;
 
 @Configuration
-@EnableAuthorizationServer
+@EnableAuthorizationServer // 认证服务器
 public class AuthorizationServerConfigurer extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
@@ -32,11 +32,13 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
     @Autowired
     private JwtAccessTokenConverter jwtAccessTokenConverter;
 
+    // 自定义的TokenEnhancer
     @Autowired
     private TokenEnhancer jwtTokenEnhancer;
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        // token 增强器链
         TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
         tokenEnhancerChain.setTokenEnhancers(Arrays.asList(jwtTokenEnhancer, jwtAccessTokenConverter));
 
@@ -47,6 +49,11 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
                 .userDetailsService(userDetailsService);
     }
 
+    /**
+     * 客户端配置
+     * @param clients
+     * @throws Exception
+     */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
@@ -57,6 +64,9 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
                 .scopes("webclient", "mobileclient");
     }
 
+    /**
+     *
+     */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) {
 

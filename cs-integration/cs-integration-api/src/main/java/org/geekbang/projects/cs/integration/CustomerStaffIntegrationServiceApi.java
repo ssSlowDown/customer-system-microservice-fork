@@ -14,6 +14,11 @@ import java.util.List;
 import static org.geekbang.projects.cs.integration.ApiConstants.PREFIX;
 import static org.geekbang.projects.cs.integration.ApiConstants.SERVICE_NAME;
 
+/**
+ * 提供服务的API，可以理解为API的定义
+ * value    服务名称
+ * configuration    指定配置
+ */
 @FeignClient(value = SERVICE_NAME, path = PREFIX + "/staffs", fallbackFactory = CustomerStaffIntegrationServiceApiFallback.class,
         configuration = FeignConfiguration.class)
 public interface CustomerStaffIntegrationServiceApi {
