@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  org.geekbang.projects.cs.infrastructure.config.CsTracerAutoConfiguration
